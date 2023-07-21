@@ -19,11 +19,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'accounts',
     'courses',
     'subjects',
-    'debug_toolbar',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
