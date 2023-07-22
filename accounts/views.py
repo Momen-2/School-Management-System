@@ -7,7 +7,7 @@ def sign_up(request):
         form = forms.SignUpForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.is_active = False
+            user.approve = False
             user.save()
             return redirect('accounts:sign-up-successful')
     else:
