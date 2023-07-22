@@ -4,10 +4,8 @@ from django.contrib.auth.admin import UserAdmin
 from accounts import forms
 from accounts import models
 
-class CustomUserAdmin(UserAdmin):
-    add_form = forms.SignUpForm
-    model = models.CustomUser
-    list_display = ['username', 'first_name', 'last_name','mobile_number', 'gender', 'mobile_number', 'profile_picture', 'birthday_date']
-    fieldsets = UserAdmin.fieldsets + ((None, {'fields': ('mobile_number',)}),)
+fields = list(UserAdmin.fieldsets)
+fields[1] = ['Personal info', {'fields': ['first_name', 'last_name','mobile_number', 'user_type','gender', 'profile_picture', 'birthday_date']}]
+UserAdmin.fieldsets = list(fields)
 
-admin.site.register(models.CustomUser, CustomUserAdmin)
+admin.site.register(models.CustomUser, UserAdmin)
