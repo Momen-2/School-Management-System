@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from accounts import forms
-from accounts import models
 
 def sign_up(request):
     if request.method == 'POST':
