@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'accounts',
     'courses',
+    'dashboards',
     'subjects',
 ]
 
