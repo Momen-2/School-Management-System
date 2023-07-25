@@ -5,10 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('accounts.urls', namespace='accounts')),
-    path('', include('courses.urls', namespace='courses')),
-    path('', include('dashboards.urls', namespace='dashboards')),
-    path('', include('subjects.urls', namespace='subjects')),
+    path('', include('accounts.urls')),
+    path('', include('courses.urls')),
+    path('', include('dashboards.urls')),
+    path('', include('subjects.urls')),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
