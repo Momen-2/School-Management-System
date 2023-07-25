@@ -3,7 +3,7 @@ from accounts import forms
 
 def sign_up(request):
     if request.method == 'POST':
-        form = forms.SignUpForm(request.POST)
+        form = forms.SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
             user.approve = False
