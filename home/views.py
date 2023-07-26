@@ -1,4 +1,6 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 
-class HomeTemplateView(TemplateView):
-    template_name = 'home/home.html'
+def home(request):
+    if request.user.is_authenticated and request.user.approve:
+        return redirect('accounts:sign-up-successful') # redirect to user dashboard
+    return render(request,'home/home.html')
