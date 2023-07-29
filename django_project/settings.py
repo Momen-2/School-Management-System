@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'accounts',
+    'attendance_management',
     'courses',
     'dashboards',
     'home',
