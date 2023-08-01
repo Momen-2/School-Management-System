@@ -47,7 +47,7 @@ def sign_up_successful(request):
         approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
         
         if approved:
-            return redirect('dashboards:admin-dashboard')
+            return redirect('admins:dashboard')
         else:
             return render(request,'accounts/wait-for-approve.html')
         
@@ -55,7 +55,7 @@ def sign_up_successful(request):
         approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
         
         if approved:
-            return redirect('dashboards:teacher-dashboard')
+            return redirect('teachers:dashboard')
         else:
             return render(request,'accounts/wait-for-approve.html')
         
@@ -63,7 +63,7 @@ def sign_up_successful(request):
         approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
         
         if approved:
-            return redirect('dashboards:student-dashboard')
+            return redirect('students:dashboard')
         else:
             return render(request,'accounts/wait-for-approve.html')
     
