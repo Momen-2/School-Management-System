@@ -9,3 +9,4 @@ fields[2] = ['Permissions', {'fields': ['approve', 'is_active', 'is_staff', 'is_
 UserAdmin.fieldsets = list(fields)
 
 admin.site.register(models.CustomUser, UserAdmin)
+admin.site.register(models.Teacher)
