@@ -6,11 +6,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('accounts.urls')),
-    path('', include('attendance_management.urls')),
+    path('', include('admins.urls')),
+    path('', include('classes.urls')),
     path('', include('courses.urls')),
-    path('', include('dashboards.urls')),
     path('', include('home.urls')),
+    path('', include('students.urls')),
     path('', include('subjects.urls')),
+    path('', include('teachers.urls')),
     path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),

@@ -24,11 +24,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'accounts',
-    'attendance_management',
+    'admins',
+    'classes',
     'courses',
-    'dashboards',
     'home',
+    'students',
     'subjects',
+    'teachers',
 ]
 
 MIDDLEWARE = [
