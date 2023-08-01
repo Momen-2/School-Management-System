@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group
-from accounts import views
 
 def home(request):
     if request.user.is_authenticated and request.user.approve and Group.objects.filter(user=request.user).exists():
