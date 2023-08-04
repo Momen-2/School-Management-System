@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from phonenumber_field.modelfields import PhoneNumberField
-from classes.models import Class
 
 class CustomUser(AbstractUser):
     GENDER_CHOICES = [('MALE', 'Male'), ('FEMALE', 'Female')]
@@ -12,8 +11,3 @@ class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to='profile-pictures/', blank=True, null=True)
     birthday_date = models.DateField(blank=True, null=True, help_text='yyyy-mm-dd')
     approve = models.BooleanField(default=False)
-    
-class Teacher(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    class_relation = models.ManyToManyField(Class)
-    

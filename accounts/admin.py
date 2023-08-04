@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from accounts import forms
 from accounts import models
 
 fields = list(UserAdmin.fieldsets)
@@ -9,4 +8,3 @@ fields[2] = ['Permissions', {'fields': ['approve', 'is_active', 'is_staff', 'is_
 UserAdmin.fieldsets = list(fields)
 
 admin.site.register(models.CustomUser, UserAdmin)
-admin.site.register(models.Teacher)
