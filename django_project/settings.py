@@ -28,9 +28,10 @@ INSTALLED_APPS = [
     'classes',
     'courses',
     'home',
+    'leave_request',
     'students',
     'subjects',
-    'teachers',
+    'teachers'
 ]
 
 MIDDLEWARE = [
