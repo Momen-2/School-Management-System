@@ -10,5 +10,5 @@ class Teacher(models.Model):
     
 @receiver(post_save, sender=CustomUser)
 def create_teacher(sender, instance, created, **kwargs):
-    if created and instance.user_type == 'TEACHER':
+    if created and instance.user_type == "TEACHER":
         Teacher.objects.create(user=instance)
