@@ -10,4 +10,4 @@ class CustomUser(AbstractUser):
     mobile_number = PhoneNumberField()
     profile_picture = models.ImageField(upload_to='profile-pictures/', blank=True, null=True)
     birthday_date = models.DateField(blank=True, null=True, help_text='yyyy-mm-dd')
-    is_approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)

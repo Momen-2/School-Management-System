@@ -7,4 +7,3 @@ class LeaveRequest(models.Model):
     end_date = models.DateField()
     status = models.CharField(max_length=20, choices=[('PENDING', 'Pending'), ('APPROVED', 'Approved'), ('REJECTED', 'Rejected')], default='PENDING')
     reason = models.TextField()
-    is_approved = models.BooleanField(default=False)

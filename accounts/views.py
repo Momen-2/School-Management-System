@@ -10,7 +10,7 @@ def sign_up(request):
         
         if form.is_valid():
             user = form.save(commit=False)
-            user.approve = False
+            user.approved = False
             user.save()
            
             if user.user_type == 'ADMIN':
@@ -44,7 +44,7 @@ def student(user):
 
 def sign_up_successful(request):
     if admin(request.user):
-        approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
+        approved = models.CustomUser.objects.all().filter(id=request.user.id, approved=True)
         
         if approved:
             return redirect('admins:dashboard')
@@ -52,7 +52,7 @@ def sign_up_successful(request):
             return render(request,'accounts/wait-for-approve.html')
         
     elif teacher(request.user):
-        approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
+        approved = models.CustomUser.objects.all().filter(id=request.user.id, approved=True)
         
         if approved:
             return redirect('teachers:dashboard')
@@ -60,7 +60,7 @@ def sign_up_successful(request):
             return render(request,'accounts/wait-for-approve.html')
         
     elif student(request.user):
-        approved = models.CustomUser.objects.all().filter(id=request.user.id, approve=True)
+        approved = models.CustomUser.objects.all().filter(id=request.user.id, approved=True)
         
         if approved:
             return redirect('students:dashboard')

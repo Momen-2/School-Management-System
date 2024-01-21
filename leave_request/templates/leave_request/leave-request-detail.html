@@ -6,14 +6,5 @@
   <p><strong>Start Date:</strong> {{ leave_request.start_date }}</p>
   <p><strong>End Date:</strong> {{ leave_request.end_date }}</p>
   <p><strong>Reason:</strong> {{ leave_request.reason }}</p>
-
-  {% if leave_request.status == 'Pending' %}
-    <form method="post">
-      {% csrf_token %}
-      <button type="submit" name="action" value="approve">Approve</button>
-      <button type="submit" name="action" value="reject">Reject</button>
-    </form>
-  {% else %}
-    <p><strong>Status:</strong> {{ leave_request.status }}</p>
-  {% endif %}
+  <p><strong>Status:</strong> {{ leave_request.status }}</p>
 {% endblock %}

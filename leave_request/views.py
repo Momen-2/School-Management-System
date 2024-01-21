@@ -19,15 +19,5 @@ def submit_leave_request(request):
 @login_required
 def leave_request_detail(request, request_id):
     leave_request = get_object_or_404(models.LeaveRequest, id=request_id)
-    
-    if request.method == 'POST':
-        action = request.POST.get('action')
-        if action == 'approve':
-            leave_request.status = 'Approved'
-            leave_request.save()
-        elif action == 'reject':
-            leave_request.status = 'Rejected'
-            leave_request.save()
-        return redirect('leave-request-detail', request_id=leave_request.id)
 
     return render(request, 'leave_request/leave-request-detail.html', {'leave_request': leave_request})
