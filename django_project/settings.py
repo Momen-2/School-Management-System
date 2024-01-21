@@ -19,7 +19,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "debug_toolbar",
     "phonenumber_field",
     "crispy_forms",
     "crispy_bootstrap5",
@@ -35,7 +34,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -117,10 +115,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/" # add url name instead of "/"
 LOGOUT_REDIRECT_URL = "/" # add url name instead of "/"
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
