@@ -9,6 +9,6 @@ class Student(models.Model):
     class_relation = models.ForeignKey(Class, on_delete=models.CASCADE, blank=True, null=True)
     
 @receiver(post_save, sender=CustomUser)
-def create_teacher(sender, instance, created, **kwargs):
+def create_student(sender, instance, created, **kwargs):
     if created and instance.user_type == "STUDENT":
         Student.objects.create(user=instance)

@@ -12,7 +12,6 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
-    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -20,8 +19,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "phonenumber_field",
-    "crispy_forms",
-    "crispy_bootstrap5",
     "accounts",
     "admins",
     "classes",
@@ -110,7 +107,3 @@ LOGIN_REDIRECT_URL = "/" # add url name instead of "/"
 LOGOUT_REDIRECT_URL = "/" # add url name instead of "/"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-
